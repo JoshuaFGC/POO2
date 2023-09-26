@@ -43,11 +43,16 @@ public class ventData {
             JButton recalibrar = new JButton("Recalibrar dispositivos");//Este botón abrirá la ventana de calibración
             recalibrar.setEnabled(false); //Este boton tambien se va a activar cuando la luz pase a roja
             
+            JLabel fecha = new JLabel("Fecha");//Tomaran la fecha y hora con funciones especificas
+            JLabel hora = new JLabel("Hora");
+            
             //Panel para tener un mejor orden en la interfaz
             JPanel panelB = new JPanel(new FlowLayout(FlowLayout.RIGHT));
             panelB.add(alerta);
             panelB.add(alertCircle);
             panelB.add(recalibrar);
+            panelB.add(fecha);
+            panelB.add(hora);
             
             //Lista de regiones
             JComboBox<String> regiones = new JComboBox<>(new String[] {"Quircot", "El Carmen", "Upala", "San Carlos", "Cooperosales"});
