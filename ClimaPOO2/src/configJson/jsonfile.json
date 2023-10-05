@@ -1,0 +1,78 @@
+{
+	"regiones" : [
+		{
+			"nombre": "Cartago",
+			"minBaro": 9.80,
+			"maxBaro": 1.40,
+			"minHigro": 0.40,
+			"maxHigro": 0.80,
+			"porcentaje": 0.2,
+			"probabilidad": 0.5		
+		},
+		{
+			"nombre": "Limon",			
+			"minBaro": 930,
+			"maxBaro": 1040,
+			"minHigro": 0.60,
+			"maxHigro": 0.90,
+			"porcentaje": 0.2,
+			"probabilidad": 0.5		
+		},
+		{
+			"nombre": "Alajuela",			
+			"minBaro": 930,
+			"maxBaro": 1040,
+			"minHigro": 0.50,
+			"maxHigro": 0.80,
+			"porcentaje": 0.2,
+			"probabilidad": 0.5
+		},
+		{
+			"nombre": "Heredia",			
+			"minBaro": 930,
+			"maxBaro": 1040,
+			"minHigro": 0.55,
+			"maxHigro": 0.95,
+			"porcentaje": 0.2,
+			"probabilidad": 0.5
+		},		
+		{
+			"nombre": "San Jose",		
+			"minBaro": 930,
+			"maxBaro": 1040,
+			"minHigro": 0.40,
+			"maxHigro": 0.70,
+			"porcentaje": 0.2,
+			"probabilidad": 0.5
+			
+		}
+	],
+
+	"historiales":[
+		{
+			"region": "Cartago",
+			"datos": "Barometro: 980-1040  Higrometro: 0.40-0.80"
+		},
+		{
+			"region": "Limon",
+			"datos": "Barometro: 980-1040  Higrometro: 0.60-0.90"
+		},
+		{
+			"region": "Alajuela",
+			"datos": "Barometro: 980-1040  Higrometro: 0.50-0.80"
+		},
+		{
+			"region": "Heredia",
+			"datos": "Barometro: 980-1040  Higrometro: 0.55-0.95"
+		},
+		{
+			"region": "San Jose",
+			"datos": "Barometro: 980-1040  Higrometro: 0.40-0.70"
+		}
+	],
+
+	"tiempo": {
+		"unidad": "minutos",
+		"tiempEspera": 1000
+	}
+}

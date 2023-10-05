@@ -55,7 +55,7 @@ public class ventData {
             panelB.add(hora);
             
             //Lista de regiones
-            JComboBox<String> regiones = new JComboBox<>(new String[] {"Quircot", "El Carmen", "Upala", "San Carlos", "Cooperosales"});
+            JComboBox<String> regiones = new JComboBox<>(new String[] {"Cartago", "Limon", "Alajuela", "Heredia", "San Jose"});
      
             //Datos barometro
             posicion.gridx = 0;
