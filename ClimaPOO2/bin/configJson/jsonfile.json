@@ -3,7 +3,7 @@
 		{
 			"nombre": "Cartago",
 			"minBaro": 980,
-			"maxBaro": 140,
+			"maxBaro": 1040,
 			"minHigro": 0.40,
 			"maxHigro": 0.80,
 			"porcentaje": 0.2,
