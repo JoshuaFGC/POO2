@@ -31,11 +31,17 @@ public class ventCalib {
             hBarometro.setFocusable(false);// no se puedan editar ni se pueda seleccionar nada
             hHigrometro.setFocusable(false);//en ellos
             
-            JTextField calibD1 = new JTextField(20);
-            calibD1.setEditable(true);
+            JTextField calibB1 = new JTextField(20);
+            calibB1.setEditable(true);
             
-            JTextField calibD2 = new JTextField(20);
-            calibD2.setEditable(true);
+            JTextField calibH1 = new JTextField(20);
+            calibH1.setEditable(true);
+            
+            JTextField calibB2 = new JTextField(20);
+            calibB1.setEditable(true);
+            
+            JTextField calibH2 = new JTextField(20);
+            calibH1.setEditable(true);
             
             JLabel baro = new JLabel("Barómetro: ");
             JLabel higro = new JLabel("Higrómetro: ");
@@ -60,27 +66,35 @@ public class ventCalib {
             posicion.gridx = 0;
             posicion.gridy = 1;
             panel.add(baro, posicion);
-
+            
             posicion.gridx = 1;
             posicion.gridy = 1;
-            panel.add(calibD1, posicion);
+            panel.add(calibB1, posicion);
 
             posicion.gridx = 0;
-            posicion.gridy = 2;
+            posicion.gridy = 3;
             panel.add(higro, posicion);
-
+            
             posicion.gridx = 1;
             posicion.gridy = 2;
-            panel.add(calibD2, posicion);
+            panel.add(calibH1, posicion);
             
             posicion.gridx = 1;
             posicion.gridy = 3;
+            panel.add(calibB2, posicion);
+            
+            posicion.gridx = 1;
+            posicion.gridy = 4;
+            panel.add(calibH2, posicion);
+            
+            posicion.gridx = 1;
+            posicion.gridy = 5;
             posicion.gridwidth = 2;
             posicion.fill = GridBagConstraints.HORIZONTAL;
             panel.add(calibrar, posicion);   
             
             posicion.gridx = 1;
-            posicion.gridy = 4;
+            posicion.gridy = 6;
             panel.add(regiones, posicion);
             
             

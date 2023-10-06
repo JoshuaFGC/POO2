@@ -12,13 +12,11 @@ public class higrometro extends device{
 	}
 	
 
-	
 	public void calibrarHigro(double pMin, double pMax) {
 		super.calibrar(pMin, pMax);
 	}
 
-	
-	
+
 	public void descalibrar(){
 		super.descalibrar();
 		

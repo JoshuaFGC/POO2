@@ -85,10 +85,11 @@ public class region {
     public void imprimirDatosDispositivos() {
         System.out.println("Región: " + nombre);
         for (device dispositivo : dispositivos) {
-            System.out.println("Tipo de Dispositivo: " + dispositivo.getClass().getSimpleName());
-            System.out.println("Datos generados:");
             for (int i = 0; i < 10; i++) { // Puedes ajustar la cantidad de datos a imprimir
-                dispositivo.run(); // Ejecuta el dispositivo para generar un dato
+            	System.out.println("Tipo de Dispositivo: " + dispositivo.getClass().getSimpleName());
+            	Thread dispositivoThread = new Thread(dispositivo);
+            	dispositivoThread.run(); // Ejecuta el dispositivo para generar un dato
+            	
                 try {
                     Thread.sleep(1000); // Espera 1 segundo antes de generar el siguiente dato (puedes ajustar el tiempo)
                 } catch (InterruptedException e) {

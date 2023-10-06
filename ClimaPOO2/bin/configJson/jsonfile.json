@@ -2,12 +2,12 @@
 	"regiones" : [
 		{
 			"nombre": "Cartago",
-			"minBaro": 9.80,
-			"maxBaro": 1.40,
+			"minBaro": 980,
+			"maxBaro": 140,
 			"minHigro": 0.40,
 			"maxHigro": 0.80,
 			"porcentaje": 0.2,
-			"probabilidad": 0.5		
+			"probabilidad": 0.1		
 		},
 		{
 			"nombre": "Limon",			
@@ -16,7 +16,7 @@
 			"minHigro": 0.60,
 			"maxHigro": 0.90,
 			"porcentaje": 0.2,
-			"probabilidad": 0.5		
+			"probabilidad": 0.1		
 		},
 		{
 			"nombre": "Alajuela",			
@@ -34,7 +34,7 @@
 			"minHigro": 0.55,
 			"maxHigro": 0.95,
 			"porcentaje": 0.2,
-			"probabilidad": 0.5
+			"probabilidad": 0.1
 		},		
 		{
 			"nombre": "San Jose",		
@@ -43,7 +43,7 @@
 			"minHigro": 0.40,
 			"maxHigro": 0.70,
 			"porcentaje": 0.2,
-			"probabilidad": 0.5
+			"probabilidad": 0.1
 			
 		}
 	],
@@ -69,10 +69,5 @@
 			"region": "San Jose",
 			"datos": "Barometro: 980-1040  Higrometro: 0.40-0.70"
 		}
-	],
-
-	"tiempo": {
-		"unidad": "minutos",
-		"tiempEspera": 1000
-	}
+	]
 }

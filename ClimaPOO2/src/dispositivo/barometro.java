@@ -12,16 +12,11 @@ public class barometro extends device{
 		porcentaje = pPercDescalibre;
 	}
 	
-
-	
 	public void calibrarBaro(double pMin, double pMax) {
 		super.calibrar(pMin, pMax);
 	}
-
-	
 	
 	public void descalibrar(){
 		super.descalibrar();
-		
 	}
 }

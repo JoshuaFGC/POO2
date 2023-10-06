@@ -29,10 +29,10 @@ public class regConstruct {
 	        double porcentaje = objeto.getJsonNumber("porcentaje").doubleValue();
 	        double probabilidad = objeto.getJsonNumber("probabilidad").doubleValue();
 
-	        // Crear y configurar el barómetro
+	        // Crear y configurar el barometro
 	        barometro baro = crearBarometro(nombreRegion, minBaro, maxBaro, probabilidad, porcentaje);
 
-	        // Crear y configurar el higrómetro
+	        // Crear y configurar el higrometro
 	        higrometro higro = crearHigrometro(nombreRegion, minHigro, maxHigro, probabilidad, porcentaje);
 
 	        regiones.add(new region(id, nombre, minBaro, maxBaro, minHigro, maxHigro, porcentaje, probabilidad, Arrays.asList(baro, higro)));
@@ -48,5 +48,5 @@ public class regConstruct {
 
 	private static higrometro crearHigrometro(String nombreRegion, double min, double max, double probabilidad, double porcentaje) {
 		return new higrometro("Higrometro de " + nombreRegion, min, max, probabilidad, porcentaje);
-	    }
+	}
 }
