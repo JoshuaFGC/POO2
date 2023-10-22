@@ -2,8 +2,8 @@
 	"regiones" : [
 		{
 			"nombre": "Cartago",
-			"minBaro": 980,
-			"maxBaro": 1040,
+			"minBaro": 1,
+			"maxBaro": 2,
 			"minHigro": 0.40,
 			"maxHigro": 0.80,
 			"porcentaje": 0.2,
@@ -11,8 +11,8 @@
 		},
 		{
 			"nombre": "Limon",			
-			"minBaro": 930,
-			"maxBaro": 1040,
+			"minBaro": 4,
+			"maxBaro": 5,
 			"minHigro": 0.60,
 			"maxHigro": 0.90,
 			"porcentaje": 0.2,
@@ -20,8 +20,8 @@
 		},
 		{
 			"nombre": "Alajuela",			
-			"minBaro": 930,
-			"maxBaro": 1040,
+			"minBaro": 7,
+			"maxBaro": 8,
 			"minHigro": 0.50,
 			"maxHigro": 0.80,
 			"porcentaje": 0.2,
@@ -29,8 +29,8 @@
 		},
 		{
 			"nombre": "Heredia",			
-			"minBaro": 930,
-			"maxBaro": 1040,
+			"minBaro": 10,
+			"maxBaro": 11,
 			"minHigro": 0.55,
 			"maxHigro": 0.95,
 			"porcentaje": 0.2,
@@ -38,36 +38,13 @@
 		},		
 		{
 			"nombre": "San Jose",		
-			"minBaro": 930,
-			"maxBaro": 1040,
+			"minBaro": 13,
+			"maxBaro": 14,
 			"minHigro": 0.40,
 			"maxHigro": 0.70,
 			"porcentaje": 0.2,
 			"probabilidad": 0.1
 			
-		}
-	],
-
-	"historiales":[
-		{
-			"region": "Cartago",
-			"datos": "Barometro: 980-1040  Higrometro: 0.40-0.80"
-		},
-		{
-			"region": "Limon",
-			"datos": "Barometro: 980-1040  Higrometro: 0.60-0.90"
-		},
-		{
-			"region": "Alajuela",
-			"datos": "Barometro: 980-1040  Higrometro: 0.50-0.80"
-		},
-		{
-			"region": "Heredia",
-			"datos": "Barometro: 980-1040  Higrometro: 0.55-0.95"
-		},
-		{
-			"region": "San Jose",
-			"datos": "Barometro: 980-1040  Higrometro: 0.40-0.70"
 		}
 	]
 }

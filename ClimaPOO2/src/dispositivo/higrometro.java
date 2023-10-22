@@ -1,5 +1,7 @@
 package dispositivo;
 
+import java.util.List;
+
 public class higrometro extends device{
 
 	
@@ -20,5 +22,19 @@ public class higrometro extends device{
 	public void descalibrar(){
 		super.descalibrar();
 		
+	}
+	
+	public List<Double> getDataHigro(){
+		datosGenerados = super.getData();
+		return datosGenerados;
+	}
+	
+	public double getMin() {
+		return min;
+	}
+	
+	public double getMax() {
+
+		return max;
 	}
 }

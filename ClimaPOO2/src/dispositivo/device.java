@@ -1,5 +1,7 @@
 package dispositivo;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 
@@ -10,25 +12,34 @@ public class device implements Runnable{
 	protected double max;
 	protected double probabilidad;
 	protected double porcentaje;
-	boolean pCalibracion; //Para la validacion de una nueva calibracion
-	
+	protected boolean pCalibracion; //Para la validacion de una nueva calibracion
+	protected List<Double> datosGenerados = new ArrayList<>();
 	
 
 	
 	public void calibrar(double pMin, double pMax) {
 		min = pMin;
 		max = pMax;
+
+		
 	}
 	
-	public boolean calibracion() {
-		return pCalibracion;
-	}
+	
+	
+
+	
+
 	
 	public void descalibrar(){
 		Random random2 = new Random();
 		double factorDescalibracion = 1 + (double)(random2 .nextDouble() * porcentaje * 2 - porcentaje);
 		min -= min * factorDescalibracion;
 		max += max * factorDescalibracion;
+	}
+	
+	public List<Double> getData(){
+		
+		return datosGenerados;
 	}
 
 	@Override
@@ -38,16 +49,14 @@ public class device implements Runnable{
             if (random.nextDouble() < probabilidad) {
                 descalibrar();
             }
-            //Validacion para cuando tenga la interfaz conectada
-            /*if (pCalibrar){
-             	calibrar(pMin, pMax);
-              }
-             */
-            
+
             double dato = min + random.nextFloat() * (max - min);
+            
+            datosGenerados.add(dato);
             System.out.println(dato);
+            
             try {
-                Thread.sleep(1000);
+                Thread.sleep(2000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

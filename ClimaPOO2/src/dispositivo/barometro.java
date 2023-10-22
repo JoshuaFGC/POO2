@@ -1,5 +1,6 @@
 package dispositivo;
 
+import java.util.List;
 
 public class barometro extends device{
 
@@ -18,5 +19,19 @@ public class barometro extends device{
 	
 	public void descalibrar(){
 		super.descalibrar();
+	}
+	
+	public List<Double> getDataBaro(){
+		datosGenerados = super.getData();
+		return datosGenerados;
+	}
+	
+	public double getMin() {
+		return min;
+	}
+
+	public double getMax() {
+		
+		return max;
 	}
 }

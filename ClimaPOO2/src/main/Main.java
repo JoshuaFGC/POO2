@@ -1,29 +1,38 @@
 package main;
 
 
+import java.util.ArrayList;
 import java.util.List;
-import Region.*;
+import java.util.Random;
 
+import javax.swing.SwingUtilities;
+
+import Region.*;
+import UI.ventData;
+import controllerInterfaz.dataShared;
+import dispositivo.device;
 
 public class Main {
-		
+	
+	
+	
+	
+	
+
 	public static void main(String[] args) {
-	    // Llama al método crearRegiones de regConstruct para obtener la lista de regiones
-		List<region> regiones = regConstruct.crearRegiones();
-	        
-	    for (region miRegion : regiones) {
-	    	miRegion.imprimirDatos();
-	        System.out.println("-------------");
-	    }
-	    
-	    // Itera sobre la lista de regiones y muestra sus datos básicos
-	    for (region miRegion : regiones) {
-	    	if(miRegion.getIdRegion()== 1) { ///Aca iria cambiando el id para mostrar otras regiones
-	    		miRegion.imprimirDatosDispositivos();	        
-	        }
-	    }	             
+		dataShared ventana = new dataShared();
+		
+		
+		ventana.crearVentana();
+		ventana.crearVentCalib();
+		
+	    	             
 	}
+
+
 }
+
+	
 
 /*El sistema consiste en regiones, las regiones tienen su configuracion
  * dada por un Json, luego, cada region tiene 2 dispositivos los cuales

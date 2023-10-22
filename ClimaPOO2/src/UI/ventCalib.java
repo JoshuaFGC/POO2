@@ -4,11 +4,23 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
+import controllerInterfaz.dataShared;
+import java.util.List;
 import java.awt.*;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 public class ventCalib {
-
-    public static void main(String[] args) {
+	
+	private static dataShared shared;
+	private static ventData ventana;
+	private List<String> historiales;
+	
+	
+    public ventCalib(dataShared pShared, ventData pVentana) {
+    	this.shared = pShared;
+    	this.historiales  = shared.getHistoriales();
+    	this.ventana = pVentana;
+    	
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Ventana de calibración");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -17,19 +29,24 @@ public class ventCalib {
             GridBagConstraints posicion = new GridBagConstraints();
             
             
-            Border borde = LineBorder.createBlackLineBorder();
             
-            JTextArea hBarometro = new JTextArea(10, 1); //Aca va a estar la informacion del JSon que va a usar el usuario
-            JTextArea hHigrometro = new JTextArea(10, 1);											//para calibrar los dispositivos
             
-            hBarometro.setBorder(borde);
-            hHigrometro.setBorder(borde);
+            JTextArea historialesLabel = new JTextArea();
             
-            hBarometro.setEditable(false); //
-            hHigrometro.setEditable(false);//
-            							//Estas lineas son para que los textArea
-            hBarometro.setFocusable(false);// no se puedan editar ni se pueda seleccionar nada
-            hHigrometro.setFocusable(false);//en ellos
+            historialesLabel.setBorder(new LineBorder(Color.BLACK));
+            StringBuilder hist = new StringBuilder();
+            for (String historial : historiales) {
+            	hist.append(historial).append("\n");
+            	
+            }
+            historialesLabel.setEditable(false);
+
+            
+            panel.add(historialesLabel);
+
+            historialesLabel.setText(hist.toString());
+            
+
             
             JTextField calibB1 = new JTextField(20);
             calibB1.setEditable(true);
@@ -48,20 +65,14 @@ public class ventCalib {
             
             JButton calibrar = new JButton("Calibrar");
 
-            
-            JComboBox<String> regiones = new JComboBox<>(new String[] {"Cartago", "Limon", "Alajuela", "Heredia", "San Jose"});
-
 
             // Posicion de todo usando los ejes x y y, dando el ancho y la alineacion del texto a la izquierda
-            posicion.gridx = 0;
-            posicion.gridy = 0;
-            hBarometro.append("Historial barometro");
-            panel.add(hBarometro, posicion);
-
             posicion.gridx = 5;
             posicion.gridy = 0;
-            hHigrometro.append("Historial barometro");
-            panel.add(hHigrometro, posicion);
+            //historiales.append("Historiales");
+            panel.add(historialesLabel, posicion);
+
+
 
             posicion.gridx = 0;
             posicion.gridy = 1;
@@ -93,13 +104,44 @@ public class ventCalib {
             posicion.fill = GridBagConstraints.HORIZONTAL;
             panel.add(calibrar, posicion);   
             
-            posicion.gridx = 1;
-            posicion.gridy = 6;
-            panel.add(regiones, posicion);
+            calibrar.addActionListener(new ActionListener() {
+            	
+                @Override
+                
+                public void actionPerformed(ActionEvent e) {
+                	
+            		
+                    String minBaroText = calibB1.getText();
+                    String maxBaroText = calibB2.getText();
+                    String minHigroText = calibH1.getText();
+                    String maxHigroText = calibH2.getText();
+                    
+                    double minBaro = Double.parseDouble(minBaroText);
+                    double maxBaro = Double.parseDouble(maxBaroText);
+                    double minHigro = Double.parseDouble(minHigroText);
+                    double maxHigro = Double.parseDouble(maxHigroText);
+                    
+                    if (ventana != null) {
+                    	
+                    	String op = ventana.getOpcion();
+                    	if (op != null) {
+                    		shared.calibrarDispositivos(op, minBaro, maxBaro, minHigro, maxHigro);
+
+                    	}
+                    }
+                    calibB1.setText("");
+                    calibB2.setText("");
+                    calibH1.setText("");
+                    calibH2.setText("");
+                }
+            });
+
+            
+
             
             
             frame.add(panel);
-            frame.setSize(500, 500);
+            frame.setSize(800, 800);
             frame.setVisible(true);
         });
     }
